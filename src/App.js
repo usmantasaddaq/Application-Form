@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Loginpage from "./Form_Components/Loginpage";
+import Registration from "./Form_Components/Registration";
+import Form from "./Form_Components/Form";
+import Submit from "./Form_Components/Submit";
+import Firstpage from "./Form_Components/Firstpage";
+import Forget from "./Form_Components/Forget";
+import { Route, Routes,useNavigate} from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Firstpage />
+      <div>
+        <Routes>
+          {/* <Route path="/" element={<Firstpage/>} /> */}
+          <Route exact path="/Loginpage" element={<Loginpage />} />
+          <Route exact path="/Registration" element={<Registration />} />
+          <Route exact path="/Form" element={<Form/>} />
+          <Route exact path="/Forget" element={<Forget />}/>
+          <Route exact path="/Submit" element={<Submit />}  />
+        </Routes>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
