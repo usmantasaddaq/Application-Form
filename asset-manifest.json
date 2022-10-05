@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/usmantasaddaq/Application-Form/static/css/main.e7f89ace.css",
+    "main.js": "/usmantasaddaq/Application-Form/static/js/main.c8f9fb9e.js",
+    "static/js/787.844f336d.chunk.js": "/usmantasaddaq/Application-Form/static/js/787.844f336d.chunk.js",
+    "index.html": "/usmantasaddaq/Application-Form/index.html",
+    "main.e7f89ace.css.map": "/usmantasaddaq/Application-Form/static/css/main.e7f89ace.css.map",
+    "main.c8f9fb9e.js.map": "/usmantasaddaq/Application-Form/static/js/main.c8f9fb9e.js.map",
+    "787.844f336d.chunk.js.map": "/usmantasaddaq/Application-Form/static/js/787.844f336d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7f89ace.css",
+    "static/js/main.c8f9fb9e.js"
+  ]
+}
