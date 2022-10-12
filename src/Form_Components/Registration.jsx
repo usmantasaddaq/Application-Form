@@ -1,6 +1,5 @@
+import axios from "axios";
 import React, { useReducer } from "react";
-import Button from "@mui/material/Button";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
@@ -9,26 +8,26 @@ const Registration = () => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   // const [cpassword, setCpassword] = useState("");
-
+  
   var initialForm = {
     fname: "",
-    lname: "",
+    // lname: "",
     email: "",
     password: "",
-    cpassword: "",
+    // cpassword: "",
   };
   const fun = (state, action) => {
     switch (action.type) {
       case "fname":
         return { ...state, fname: action.payload };
-      case "lname":
-        return { ...state, lname: action.payload };
+      // case "lname":
+      //   return { ...state, lname: action.payload };
       case "email":
         return { ...state, email: action.payload };
       case "password":
         return { ...state, password: action.payload };
-      case "cpassword":
-        return { ...state, cpassword: action.payload };
+      // case "cpassword":
+      //   return { ...state, cpassword: action.payload };
     }
   };
 
@@ -37,31 +36,32 @@ const Registration = () => {
   const navigate = useNavigate();
   const SubmitForm = (e) => {
     console.log("initialForminitialForm", state);
+
+ const Signup ={
+  "name": state.fname,
+    "email":state.email,
+    "password":state.password
+ }
+      axios.post("https://taskforum.herokuapp.com/api/auth/signup", Signup);
+  // data name  object > 3 things > required
+
+  // axios.post('url',body: object);
+
     if (
       state.fname == "" ||
-      state.lname == "" ||
       state.email == "" ||
-      state.password == "" ||
-      state.cpassword == ""
-    ) {
-      e.preventDefault();
-      alert("First complete your form");
-    } else {
-      e.preventDefault();
-      // const NewData = {
-      //   fname: fname,
-      //   lname: lname,
-      //   email: email,
-      //   password: password,
-      //   cpassword: cpassword,
-      // };
-      // setALLData([...data, NewData]);+
-
-      navigate("/Loginpage");
-    }
+      state.password == "")
+      {
+        e.preventDefault();
+        alert("First complete your form");
+      } else {
+        e.preventDefault();
+        navigate("/Loginpage");
+      } 
   };
   return (
     <>
+
       <form onSubmit={SubmitForm}>
         <div className="parents">
           <div className="Resgis_style">
@@ -79,7 +79,7 @@ const Registration = () => {
               }
             />
 
-            <label>Last Name</label>
+            {/* <label>Last Name</label>
             <input
               className="inputR"
               type="text"
@@ -90,8 +90,8 @@ const Registration = () => {
               // onChange={(e) => setLname(e.target.value)}
               onChange={(e) =>
                 dispatch({ type: "lname", payload: e.target.value })
-              }
-            />
+              } 
+            />*/}
             <label>Email</label>
             <input
               className="inputR"
@@ -120,7 +120,7 @@ const Registration = () => {
               autoComplete="off"
             />
             <h4> (e.g:-abc@123) </h4>
-            <label> Confirm Password </label>
+            {/* <label> Confirm Password </label>
             <input
               className="inputR"
               type="password"
@@ -132,7 +132,7 @@ const Registration = () => {
                 dispatch({ type: "cpassword", payload: e.target.value })
               }
               autoComplete="off"
-            />
+            /> */}
             <br />
             <button className="btn_SubmitR" type="submit">
               Register!

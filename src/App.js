@@ -1,24 +1,38 @@
 import "./App.css";
 import Loginpage from "./Form_Components/Loginpage";
 import Registration from "./Form_Components/Registration";
-import Form from "./Form_Components/Form";
-import Submit from "./Form_Components/Submit";
-import Firstpage from "./Form_Components/Firstpage";
-import Forget from "./Form_Components/Forget";
-import { Route, Routes,useNavigate} from "react-router-dom";
+import { Route, Routes,useNavigate,NavLink} from "react-router-dom";
+import Post from './Form_Components/Post';
+import  Card from './Form_Components/Card';
 
+import Edit from './Form_Components/Edit';
+import Setting from "./Form_Components/Setting";
+import Postinfo from './Form_Components/Postinfo';
+import  UserComents from './Form_Components/UserComents';
+import Createpost from './Form_Components/Createpost';
+import PostComments from './Form_Components/PostComments';
+import ShowComments from './Form_Components/ShowComments';
+import AddComments from './Form_Components/AddComments';
 const App = () => {
   return (
     <>
-      <Firstpage />
+          {/* <Post /> */}
       <div>
         <Routes>
-          {/* <Route path="/" element={<Firstpage/>} /> */}
-          <Route exact path="/Loginpage" element={<Loginpage />} />
+        
+          <Route exact path="/" element={<Loginpage />} />
+        
           <Route exact path="/Registration" element={<Registration />} />
-          <Route exact path="/Form" element={<Form/>} />
-          <Route exact path="/Forget" element={<Forget />}/>
-          <Route exact path="/Submit" element={<Submit />}  />
+          <Route exact path="/Post" element={<Post />}/>
+          <Route exact path="/Card" element={<Card/>}/>
+          <Route exact path="/ShowComments" element={<ShowComments/>}/>
+          <Route exact path="/Edit" element={<Edit/>}/>
+          <Route exact path="/Profile" element={<Setting/>}/>
+          <Route exact path="/Postinfo" element={<Postinfo/>}/>
+          <Route exact path="/UserComents" element={<UserComents/>}/>
+          <Route exact path="/Createpost" element={<Createpost/>}/>
+          <Route exact path="/PostComments" element={<PostComments/>}/>
+          <Route exact path="/AddComments" element={<AddComments/>}/>
         </Routes>
       </div>
     </>
